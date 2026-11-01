@@ -1,38 +1,190 @@
-.App {
+.movie-list {
+  margin-bottom: 30px;
+}
+
+.category-title {
+  text-align: left;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+}
+
+.poster-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  filter: grayscale(100%); 
+}
+
+.poster-image-watched {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; 
+}
+
+a{
+  text-decoration: none;
+  color: #000000;
+}
+
+.movie-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 0%;
+}
+
+.category-text {
+  font-size: 14px;
+  color: #777;
+  margin: 0%;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h1 {
   text-align: center;
+  margin-bottom: 30px;
+  color: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.movie-list-container {
+  margin-bottom: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.category-title {
+  margin-left: 6%;
+  margin-right: 5%;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.movies-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  overflow-x: auto; /* Adiciona um scroll horizontal */
+  /*width: calc(100% + 10%); /* Adiciona uma largura extra para evitar quebras de linha no final */
+}
+
+.movie-row {
+  display: flex;
+  flex-wrap: nowrap; /* Impede que os itens quebrem para a próxima linha */
+  margin-left: 3%;
+  margin-right: 5%;
+}
+
+.movie-card {
+  margin: 10px;
+  text-align: center;
+  max-width: 200px;
+  flex: 0 0 auto; /* Impede que os itens se estendam */
+}
+
+@media (min-width: 768px) {
+  /* Defina a largura do breakpoint conforme necessário */
+  .movie-row {
+    margin-right: 5%;
+    flex-wrap: wrap;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+.tenis-verde-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+
+.tenis-verde-title {
+  color: #2ecc71; /* Verde */
+  font-size: 2em;
+}
+
+.tenis-verde-description {
+  color: #333;
+  font-size: 1.2em;
+}
+
+/* ... estilos anteriores ... */
+
+.search-bar {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.search-button {
+  background-color: #3498db; /* Azul */
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-left: 10px;
+}
+
+.search-button:hover {
+  background-color: #2980b9; /* Azul mais escuro ao passar o mouse */
+}
+
+.search-button:disabled {
+  background-color: #ccc; /* Cinza quando desabilitado */
+  cursor: not-allowed; /* Cursor de "não permitido" quando desabilitado */
+}
+.centralized-container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 50vh; /* 100% da altura da viewport */
 }
 
-.App-link {
-  color: #61dafb;
+.centered-image {
+  max-width: 100%; /* A imagem não ultrapassará a largura do seu contêiner pai */
+  max-height: 100%; /* A imagem não ultrapassará a altura do seu contêiner pai */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7); /* Fundo semi-transparente */
+}
+
+.loading-spinner {
+  border: 4px solid #3498db; /* Cor do spinner */
+  border-radius: 50%;
+  border-top: 4px solid #ffffff; /* Cor do fundo */
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite; /* Animação de rotação */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.header-icon {
+  height: 20px;
 }
